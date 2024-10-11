@@ -1,0 +1,11 @@
+
+{% extends "base.html" %}
+{% block content %}
+<h1>Patient Dashboard</h1>
+<ul>
+    <li><a href="{{ url_for('patient_profile') }}">Ver Perfil</a></li>
+    <li><a href="{{ url_for('patient_appointments') }}">Visualizar Compromissos</a></li>
+    <li><a href="{{ url_for('patient_bills', patient_id=current_user.id) }}">Ver Contas Pendentes</a></li>
+</ul>
+{% endblock %}
+    

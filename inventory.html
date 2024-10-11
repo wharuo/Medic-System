@@ -1,0 +1,43 @@
+
+<h1>Gerenciar Inventário</h1>
+<h3>Alertas de Estoque Baixo</h3>
+<ul>
+    {% for item in low_stock_items %}
+    <li>{{ item.item_name }} ({{ item.category }}) - Apenas {{ item.quantity }} restantes! Reabastecer de {{ item.supplier }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Adicionar Novo Item ao Inventário</h3>
+<form method="POST" action="{{ url_for('manage_inventory') }}">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.item_name.label }}
+        {{ form.item_name(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.category.label }}
+        {{ form.category(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.quantity.label }}
+        {{ form.quantity(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.reorder_level.label }}
+        {{ form.reorder_level(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.supplier.label }}
+        {{ form.supplier(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.submit(class="btn btn-primary") }}
+    </div>
+</form>
+
+<h3>Lista de Inventário</h3>
+<ul>
+    {% for item in inventory %}
+    <li>{{ item.item_name }} ({{ item.category }}) - {{ item.quantity }} em estoque</li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,10 @@
+
+{% extends "base.html" %}
+{% block content %}
+<h1>Admin Dashboard</h1>
+<ul>
+    <li><a href="{{ url_for('manage_inventory') }}">Gerenciar Inventário</a></li>
+    <li><a href="{{ url_for('generate_reports') }}">Relatórios</a></li>
+</ul>
+{% endblock %}
+    
