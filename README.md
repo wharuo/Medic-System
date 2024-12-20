@@ -1,89 +1,89 @@
-
 # Hospital Management System
 
-Este projeto é um sistema de gerenciamento hospitalar desenvolvido com Flask, permitindo que administradores, médicos e pacientes realizem operações essenciais como gerenciamento de pacientes, compromissos, inventário, faturamento e geração de relatórios.
+This project is a hospital management system developed with Flask, enabling administrators, doctors, and patients to perform essential operations such as managing patients, appointments, inventory, billing, and report generation.
 
-## Estrutura do Sistema
+## System Structure
 
-### Diretórios
+### Directories
 
-- **app/**: Contém os arquivos principais da aplicação Flask.
-  - **__init__.py**: Inicializa o aplicativo Flask, banco de dados e login.
-  - **models.py**: Define os modelos para usuários, pacientes, médicos, inventário e faturamento.
-  - **routes.py**: Define as rotas para as diferentes funcionalidades.
-  - **forms.py**: Contém os formulários usados no sistema.
-  - **templates/**: Contém os templates HTML para as diferentes páginas.
-  - **static/**: Contém o arquivo CSS (`style.css`) e o arquivo JavaScript (`main.js`).
+- **app/**: Contains the core files of the Flask application.
+  - **__init__.py**: Initializes the Flask app, database, and login functionality.
+  - **models.py**: Defines models for users, patients, doctors, inventory, and billing.
+  - **routes.py**: Defines routes for various functionalities.
+  - **forms.py**: Contains forms used in the system.
+  - **templates/**: Contains HTML templates for different pages.
+  - **static/**: Contains the CSS file (`style.css`) and the JavaScript file (`main.js`).
 
-- **schema.sql**: Script SQL para criação das tabelas no banco de dados.
+- **schema.sql**: SQL script for creating database tables.
 
-## Funcionalidades
+## Features
 
-### 1. Autenticação de Usuários
-- **Função**: Administradores, médicos e pacientes podem se cadastrar e fazer login. O sistema direciona o usuário para um dashboard apropriado baseado em seu papel.
-- **Tecnologia**: Flask-Login, Bcrypt para senhas criptografadas.
+### 1. User Authentication
+- **Functionality**: Administrators, doctors, and patients can register and log in. The system redirects users to an appropriate dashboard based on their role.
+- **Technology**: Flask-Login, Bcrypt for encrypted passwords.
 
-### 2. Gerenciamento de Pacientes
-- **Função**: Administradores e médicos podem gerenciar pacientes, visualizar e editar detalhes, e marcar compromissos.
-- **Modelos Relacionados**: User, Patient, Appointment.
+### 2. Patient Management
+- **Functionality**: Administrators and doctors can manage patients, view and edit details, and schedule appointments.
+- **Related Models**: User, Patient, Appointment.
 
-### 3. Gerenciamento de Médicos
-- **Função**: Administradores podem gerenciar os perfis de médicos. Médicos podem visualizar seus compromissos e gerenciar pacientes.
-- **Modelos Relacionados**: User, Doctor, Appointment.
+### 3. Doctor Management
+- **Functionality**: Administrators can manage doctor profiles. Doctors can view their appointments and manage patients.
+- **Related Models**: User, Doctor, Appointment.
 
-### 4. Gerenciamento de Inventário
-- **Função**: Administradores podem adicionar, editar e remover itens do inventário, com alertas para estoque baixo.
-- **Modelos Relacionados**: Inventory.
+### 4. Inventory Management
+- **Functionality**: Administrators can add, edit, and remove inventory items, with alerts for low stock levels.
+- **Related Models**: Inventory.
 
-### 5. Faturamento e Pagamentos
-- **Função**: Criação de faturas para pacientes, processamento de pagamentos e rastreamento de faturas pendentes e pagas.
-- **Modelos Relacionados**: Billing, Payment.
+### 5. Billing and Payments
+- **Functionality**: Generate invoices for patients, process payments, and track pending and completed invoices.
+- **Related Models**: Billing, Payment.
 
-### 6. Relatórios e Análises
-- **Função**: Administradores podem gerar relatórios financeiros, de pacientes e de desempenho dos médicos.
-- **Tecnologia**: Geração dinâmica de relatórios com Flask.
+### 6. Reporting and Analytics
+- **Functionality**: Administrators can generate financial, patient, and doctor performance reports.
+- **Technology**: Dynamic report generation using Flask.
 
-## Como Executar
+## How to Run
 
-### 1. Clonar o Repositório
+### 1. Clone the Repository
 ```bash
-git clone <URL-do-repositório>
+git clone <repository-URL>
 cd hospital_management_system
 ```
 
-### 2. Criar o Ambiente Virtual
+### 2. Create a Virtual Environment
 ```bash
 python -m venv venv
-source venv/bin/activate  # No Windows: venv\Scriptsctivate
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-### 3. Instalar Dependências
+### 3. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Configurar o Banco de Dados
-Inicialize o banco de dados executando o arquivo SQL:
+### 4. Set Up the Database
+Initialize the database by running the SQL file:
 ```bash
 sqlite3 hospital.db < schema.sql
 ```
 
-### 5. Executar o Servidor
+### 5. Run the Server
 ```bash
 python run.py
 ```
 
-A aplicação estará disponível em `http://127.0.0.1:5000/`.
+The application will be available at `http://127.0.0.1:5000/`.
 
-## Dependências
+## Dependencies
 - Flask
 - Flask-SQLAlchemy
 - Flask-WTF
 - Flask-Login
 - Bcrypt
 
-## Contribuição
-Sinta-se à vontade para fazer pull requests ou abrir issues para melhorias.
+## Contribution
+Feel free to submit pull requests or open issues for improvements.
 
-## Licença
-Este projeto é de uso livre para fins educacionais.
+## License
+
+This project is free to use for educational purposes.
